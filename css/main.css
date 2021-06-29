@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #121212;
+  min-height: 100vh;
+}
+
+.button {
+  padding: 10px 20px;
+  background: #242424;
+  border: none;
+  color: #ffffff;
+  border-radius: 100px;
+  position: relative;
+  transition: 1s ease all;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  border-radius: 100px;
+  filter: blur(10px);
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s ease all;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #FA7199, #F5CE62, #E43603, #FA7199) 0% center/400%;
+  animation: hover-anim 10s linear forwards infinite;
+}
+
+.button:hover::before {
+  opacity: 0.5;
+}
+
+@keyframes hover-anim {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+}
